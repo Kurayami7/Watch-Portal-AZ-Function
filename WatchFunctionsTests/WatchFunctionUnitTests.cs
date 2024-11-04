@@ -12,7 +12,7 @@ namespace WatchFunctionsTests
     public class WatchFunctionUnitTests
     {
         [Fact]
-        public void TestWatchFunctionSuccess()
+        public void TestWatchFunctionSuccess() // The TestWatchFunctionSuccess method tests the WatchInfo function when the query string contains the model parameter.
         {
             string queryString = "G-Shock";
             var request = new DefaultHttpContext().Request; // The request object is created from the context object.
@@ -42,7 +42,7 @@ namespace WatchFunctionsTests
             Assert.Equal(expectedContent, okResult.Value);
         }
 
-        [Fact]
+        [Fact] // The TestWatchFunctionFailureNoQueryString method tests the WatchInfo function when the query string does not contain the model parameter.
         public void TestWatchFunctionFailureNoQueryString()
         {
             string queryString = "G-Shock";
@@ -71,7 +71,7 @@ namespace WatchFunctionsTests
         }
 
         [Fact]
-        public void TestWatchFunctionFailureNoModel()
+        public void TestWatchFunctionFailureNoModel() // The TestWatchFunctionFailureNoModel method tests the WatchInfo function when the query string does not contain the model parameter.
         {
             var queryStringValue = "abc";
             var request = new DefaultHttpContext().Request;
